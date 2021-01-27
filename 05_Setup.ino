@@ -28,11 +28,18 @@ void setup() {
 
   // SETTING THE INPUTS FOR THE TWO BUTTONS - THE MCU HAS BUILT IN PULL UP RESISTORS SO NO NEED FOR EXTERNAL... WHICH IS PRETTY NEAT
   pinMode(13, INPUT_PULLUP);
-  pinMode(10, INPUT_PULLUP);
+  pinMode(11, INPUT_PULLUP);
 
   // THIS IS THE OUTPUT PIN FOR CHANNEL 1 (THE ONLY CHANNEL CURRENTLY ACTUALLY FIRING CLOCK PULSES) - ALSO SETTING IT LOW TO BEGIN WITH
-  pinMode(8, OUTPUT);
-  digitalWrite(8, LOW);
+  pinMode(channel1Pin, OUTPUT);
+  digitalWrite(channel1Pin, LOW);
+  pinMode(channel2Pin, OUTPUT);
+  digitalWrite(channel2Pin, LOW);
+  pinMode(channel3Pin, OUTPUT);
+  digitalWrite(channel3Pin, LOW);
+  pinMode(channel4Pin, OUTPUT);
+  digitalWrite(channel4Pin, LOW);
+
 
   // SETTING THE UI STUFF - THE PICOPIXEL FONT IS FROM THE ADAFRUIT.GFX LIBRARY AND IS SOOOOOOO CUTE
   display.setTextSize(1);      // Normal 1:1 pixel scale

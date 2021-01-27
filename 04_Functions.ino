@@ -371,7 +371,7 @@ void splashLogo() {
 
   display.display();
 
-  delay(1500); // Pause for 2 seconds
+  delay(2000); // Pause for 2 seconds
   display.clearDisplay();
   display.display();
 }

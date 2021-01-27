@@ -7,7 +7,7 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // WANNA LOGO?
-#define SHOW_LOGO 0
+#define SHOW_LOGO 1
 
 // MIDI CLOCK IS FIXED AT 24 TICKS PER BEAT REGARDLESS OF BPM - WE'RE SETTING THE DEFAULT BPM TO BE 120
 int MIDI_TICKS_PER_BEAT = 24;
@@ -27,7 +27,12 @@ bool runLoop = false;
 // THE ENCODER USES PINS 0 AND 1 AS THEY HAVE INTERRUPT CAPABILITIES SO THEY WILL BE READ EVEN IF THE LOOP IS BUSY WITH SAY.. DRAWING STUFF ON THE SCREEN
 Encoder myEnc(0, 1);
 Button rotaryButton(13);
-Button startButton(10);
+Button startButton(11);
+
+byte channel1Pin = 9;
+byte channel2Pin = 10;
+byte channel3Pin = 7;
+byte channel4Pin = 5;
 
 
 // SETTING UP A COUPLE OF ARRAYS OF THE TIME DIVISION OR MULTIPLICATION FACTORS AVAILABLE
@@ -38,7 +43,7 @@ String factorNames[]  = {"/16","/8","/4","/2"," 1","*2","*3","*4","*5","*6","*7"
 // SETTING UP SOME INITIAL OR DEFAULT FACTORS FOR EACH CHANNEL
 int Channel_1_Factor = 2;
 int Channel_2_Factor = 4;
-int Channel_3_Factor = 4;
+int Channel_3_Factor = 5;
 int Channel_4_Factor = 8;
 
 

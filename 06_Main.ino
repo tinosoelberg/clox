@@ -87,22 +87,25 @@ void loop(){
   
   
   if (channel1ClockReady){
-    digitalWrite(8, HIGH);                          // SET THE CHANNEL'S CLOCK OUT PIN HIGH - THIS IS ONLY IMPLEMENTED FOR CHANNEL 1 FOR NOW
+    digitalWrite(channel1Pin, HIGH);                          // SET THE CHANNEL'S CLOCK OUT PIN HIGH - THIS IS ONLY IMPLEMENTED FOR CHANNEL 1 FOR NOW
     display.fillCircle(46, 8, 2, SSD1306_WHITE);    // DISPLAY A NICE DOT ON THE SCREEN
     channel1ClockReady = false;                     // RESET THE READY FLAG SO WE ARE READY FOR THE NEXT PULSE
     }
 
   if (channel2ClockReady){
+    digitalWrite(channel2Pin, HIGH);                          // SET THE CHANNEL'S CLOCK OUT PIN HIGH - THIS IS ONLY IMPLEMENTED FOR CHANNEL 1 FOR NOW
     display.fillCircle(46, 20, 2, SSD1306_WHITE);
     channel2ClockReady = false;
     }
 
   if (channel3ClockReady){
+    digitalWrite(channel3Pin, HIGH);                          // SET THE CHANNEL'S CLOCK OUT PIN HIGH - THIS IS ONLY IMPLEMENTED FOR CHANNEL 1 FOR NOW
     display.fillCircle(46, 32, 2, SSD1306_WHITE);
     channel3ClockReady = false;
     }
 
   if (channel4ClockReady){
+    digitalWrite(channel4Pin, HIGH);                          // SET THE CHANNEL'S CLOCK OUT PIN HIGH - THIS IS ONLY IMPLEMENTED FOR CHANNEL 1 FOR NOW
     display.fillCircle(46, 45, 2, SSD1306_WHITE);
     channel4ClockReady = false;
     }
@@ -119,7 +122,10 @@ void loop(){
   // TO REMOVE THE DOTS AGAIN AND TO SET THE CHANNEL OUTPUT PINS LOW, WE LOOK AT THE CURRENT TIME AND COMPARE TO THE DOTRESET TIME WE HAD PREVIOUSLY SET
   if ((millis() >= dotResetTime) && (dotsAreResat == false)){
     
-  digitalWrite(8, LOW);          // WE SET CHANNEL1'S OUTPUT PIN LOW
+  digitalWrite(channel1Pin, LOW);          // WE SET CHANNEL1'S OUTPUT PIN LOW
+  digitalWrite(channel2Pin, LOW);          // WE SET CHANNEL1'S OUTPUT PIN LOW
+  digitalWrite(channel3Pin, LOW);          // WE SET CHANNEL1'S OUTPUT PIN LOW
+  digitalWrite(channel4Pin, LOW);          // WE SET CHANNEL1'S OUTPUT PIN LOW
 
   // AND RESET ALL THE DOTZZ.. PROBABLY COULD JUST BE ONE BIG SQUARE.. OH WELL
   display.fillCircle(46, 8,  2, SSD1306_BLACK); //Reset the dots
